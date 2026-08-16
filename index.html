@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Precision Automotive Brasil — Diagnóstico automotivo especializado em Curitiba e região.">
+  <title>Precision Automotive Brasil | Diagnóstico Automotivo</title>
+  <style>
+    :root{
+      --red:#e10600;
+      --red-dark:#a90000;
+      --black:#070707;
+      --dark:#101010;
+      --gray:#171717;
+      --text:#f5f5f5;
+      --muted:#aaa;
+      --line:#292929;
+      --green:#25d366;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      background:var(--black);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+
+    header{
+      position:sticky;top:0;z-index:100;
+      background:rgba(7,7,7,.94);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    nav{
+      min-height:72px;display:flex;align-items:center;
+      justify-content:space-between;gap:24px;
+    }
+    .logo{
+      font-size:24px;font-weight:900;letter-spacing:1px;
+    }
+    .logo span{color:var(--red)}
+    .nav-links{display:flex;gap:24px;align-items:center}
+    .nav-links a{color:#ddd;font-size:14px}
+    .nav-links a:hover{color:#fff}
+    .menu{display:none;background:none;border:0;color:#fff;font-size:28px}
+
+    .hero{
+      min-height:650px;
+      display:flex;align-items:center;
+      background:
+        radial-gradient(circle at 75% 30%,rgba(225,6,0,.24),transparent 32%),
+        linear-gradient(115deg,#050505 35%,#111 100%);
+      border-bottom:1px solid var(--line);
+    }
+    .hero-grid{
+      display:grid;grid-template-columns:1.1fr .9fr;
+      gap:50px;align-items:center;padding:80px 0;
+    }
+    .badge{
+      display:inline-block;padding:8px 12px;border:1px solid #3b3b3b;
+      border-radius:999px;color:#ddd;font-size:12px;margin-bottom:20px;
+    }
+    h1{font-size:clamp(42px,6vw,72px);line-height:1.02;margin-bottom:22px}
+    h1 span{color:var(--red)}
+    .hero p{color:#c5c5c5;font-size:18px;max-width:620px;margin-bottom:30px}
+    .buttons{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:14px 22px;border-radius:8px;font-weight:800;border:1px solid var(--line);
+      transition:.2s;
+    }
+    .btn-primary{background:var(--red);border-color:var(--red)}
+    .btn-primary:hover{background:var(--red-dark)}
+    .btn-outline{background:transparent}
+    .btn-outline:hover{background:#171717}
+
+    .hero-card{
+      background:linear-gradient(145deg,#191919,#0c0c0c);
+      border:1px solid #303030;border-radius:18px;padding:28px;
+      box-shadow:0 25px 70px rgba(0,0,0,.45);
+    }
+    .hero-card .big{
+      font-size:62px;font-weight:900;color:var(--red);line-height:1;
+      margin-bottom:12px;
+    }
+    .hero-card h3{font-size:22px;margin-bottom:10px}
+    .hero-card p{font-size:14px;margin-bottom:20px}
+    .check{display:flex;gap:10px;margin:12px 0;color:#ddd;font-size:14px}
+    .check b{color:var(--red)}
+
+    section{padding:80px 0}
+    .section-head{margin-bottom:38px}
+    .eyebrow{color:var(--red);font-weight:900;font-size:13px;text-transform:uppercase;letter-spacing:1.5px}
+    h2{font-size:38px;margin-top:8px}
+    .section-head p{color:var(--muted);margin-top:10px;max-width:700px}
+
+    .services{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+    }
+    .service{
+      background:var(--dark);border:1px solid var(--line);border-radius:14px;
+      padding:24px;transition:.2s;
+    }
+    .service:hover{transform:translateY(-4px);border-color:#4a4a4a}
+    .icon{
+      width:46px;height:46px;border-radius:10px;background:rgba(225,6,0,.12);
+      display:grid;place-items:center;color:var(--red);font-size:22px;margin-bottom:18px;
+    }
+    .service h3{margin-bottom:8px}
+    .service p{font-size:14px;color:#aaa}
+    .price{font-size:20px;font-weight:900;margin-top:18px;color:#fff}
+    .price small{font-size:11px;color:#888;font-weight:normal}
+
+    .process{background:#0d0d0d}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .step{padding:22px;border:1px solid var(--line);border-radius:14px;background:#111}
+    .number{font-size:30px;color:var(--red);font-weight:900;margin-bottom:12px}
+    .step p{color:#aaa;font-size:14px;margin-top:7px}
+
+    .cta{
+      background:linear-gradient(120deg,#210000,#090909 60%);
+      border:1px solid #4a1616;border-radius:20px;padding:45px;
+      display:flex;justify-content:space-between;align-items:center;gap:30px;
+    }
+    .cta p{color:#bbb;margin-top:8px}
+    .whatsapp{background:var(--green);color:#061006;border-color:var(--green)}
+
+    footer{border-top:1px solid var(--line);padding:35px 0;color:#888;font-size:13px}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+    .float-wa{
+      position:fixed;right:20px;bottom:20px;z-index:200;
+      width:58px;height:58px;border-radius:50%;background:var(--green);
+      color:#061006;display:grid;place-items:center;font-size:27px;
+      box-shadow:0 10px 30px rgba(0,0,0,.45);
+    }
+
+    @media(max-width:800px){
+      .nav-links{display:none}
+      .menu{display:block}
+      .hero-grid{grid-template-columns:1fr;padding:60px 0}
+      .hero-card{display:none}
+      .services{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr 1fr}
+      h2{font-size:31px}
+      .cta{padding:30px;display:block}
+      .cta .btn{margin-top:20px}
+    }
+    @media(max-width:500px){
+      .steps{grid-template-columns:1fr}
+      .hero{min-height:auto}
+      section{padding:60px 0}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a class="logo" href="#inicio">PRECISION <span>AUTOMOTIVE</span></a>
+      <div class="nav-links">
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#processo">Como funciona</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <button class="menu" onclick="toggleMenu()" aria-label="Abrir menu">☰</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge">CURITIBA • ARAUCÁRIA • REGIÃO</div>
+        <h1>Diagnóstico automotivo <span>com precisão.</span></h1>
+        <p>
+          Soluções profissionais de diagnóstico eletrônico, codificação,
+          personalização e análise de sistemas automotivos.
+        </p>
+        <div class="buttons">
+          <!-- TROQUE 5541999999999 PELO SEU WHATSAPP -->
+          <a class="btn btn-primary" href="https://wa.me/5541999999999?text=Olá!%20Gostaria%20de%20solicitar%20um%20serviço." target="_blank">Solicitar atendimento</a>
+          <a class="btn btn-outline" href="#servicos">Ver serviços</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="big">PRO</div>
+        <h3>Diagnóstico especializado</h3>
+        <p>Atendimento direcionado para veículos modernos e sistemas eletrônicos.</p>
+        <div class="check"><b>✓</b> Scanner profissional multimarcas</div>
+        <div class="check"><b>✓</b> Leitura e análise de módulos</div>
+        <div class="check"><b>✓</b> Codificação e personalização</div>
+        <div class="check"><b>✓</b> Atendimento sob agendamento</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicos">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Serviços</div>
+        <h2>O que podemos fazer pelo seu veículo</h2>
+        <p>Edite os nomes e valores abaixo de acordo com a tabela oficial da Precision Automotive.</p>
+      </div>
+
+      <div class="services">
+        <article class="service">
+          <div class="icon">⌁</div>
+          <h3>Diagnóstico eletrônico</h3>
+          <p>Leitura de falhas, parâmetros e sistemas eletrônicos do veículo.</p>
+          <div class="price">Consulte <small>• orçamento</small></div>
+        </article>
+
+        <article class="service">
+          <div class="icon">⚙</div>
+          <h3>Codificação de módulos</h3>
+          <p>Procedimentos de codificação e configuração conforme compatibilidade do veículo.</p>
+          <div class="price">Consulte <small>• orçamento</small></div>
+        </article>
+
+        <article class="service">
+          <div class="icon">★</div>
+          <h3>Personalização</h3>
+          <p>Ativação ou alteração de funções disponíveis na eletrônica do veículo.</p>
+          <div class="price">Consulte <small>• orçamento</small></div>
+        </article>
+
+        <article class="service">
+          <div class="icon">⌕</div>
+          <h3>Diagnóstico avançado</h3>
+          <p>Análise direcionada para falhas de comunicação e sistemas eletrônicos.</p>
+          <div class="price">Consulte <small>• orçamento</small></div>
+        </article>
+
+        <article class="service">
+          <div class="icon">▣</div>
+          <h3>Scanner multimarcas</h3>
+          <p>Diagnóstico para diversas marcas e modelos, conforme cobertura do equipamento.</p>
+          <div class="price">Consulte <small>• orçamento</small></div>
+        </article>
+
+        <article class="service">
+          <div class="icon">✓</div>
+          <h3>Check eletrônico</h3>
+          <p>Verificação eletrônica para auxiliar na avaliação do estado do veículo.</p>
+          <div class="price">Consulte <small>• orçamento</small></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="process" id="processo">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Atendimento</div>
+        <h2>Simples, rápido e profissional</h2>
+      </div>
+
+      <div class="steps">
+        <div class="step"><div class="number">01</div><h3>Contato</h3><p>Você chama pelo WhatsApp e informa o veículo e o problema.</p></div>
+        <div class="step"><div class="number">02</div><h3>Avaliação</h3><p>Definimos o procedimento adequado para o seu caso.</p></div>
+        <div class="step"><div class="number">03</div><h3>Diagnóstico</h3><p>Executamos os testes e analisamos os dados eletrônicos.</p></div>
+        <div class="step"><div class="number">04</div><h3>Resultado</h3><p>Você recebe a orientação sobre o diagnóstico e próximos passos.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="container">
+      <div class="cta">
+        <div>
+          <div class="eyebrow">Precision Automotive Brasil</div>
+          <h2>Precisa de diagnóstico?</h2>
+          <p>Fale conosco e consulte disponibilidade e valor para o seu veículo.</p>
+        </div>
+        <!-- TROQUE 5541999999999 PELO SEU WHATSAPP -->
+        <a class="btn whatsapp" href="https://wa.me/5541999999999?text=Olá!%20Vim%20pelo%20site%20da%20Precision%20Automotive." target="_blank">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>© 2026 Precision Automotive Brasil</div>
+    <div>Diagnóstico • Codificação • Personalização</div>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/5541999999999?text=Olá!%20Gostaria%20de%20um%20orçamento." target="_blank" aria-label="WhatsApp">◉</a>
+
+<script>
+  function toggleMenu(){
+    const nav = document.querySelector('.nav-links');
+    const open = nav.style.display === 'flex';
+    nav.style.display = open ? 'none' : 'flex';
+    if(!open){
+      nav.style.position='absolute';
+      nav.style.top='72px';
+      nav.style.left='0';
+      nav.style.right='0';
+      nav.style.padding='20px';
+      nav.style.background='#080808';
+      nav.style.flexDirection='column';
+      nav.style.borderBottom='1px solid #292929';
+    }
+  }
+</script>
+</body>
+</html>
